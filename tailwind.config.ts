@@ -16,6 +16,11 @@ module.exports = {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['IBM Plex Sans'],
+				serif: ['IBM Plex Serif'],
+				mono: ['IBM Plex Mono']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

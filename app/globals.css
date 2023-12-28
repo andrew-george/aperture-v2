@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
 	:root {
+		--sidebar-width: 50px;
+
 		--background: 0 0% 100%;
 		--foreground: 240 10% 3.9%;
 
@@ -33,10 +39,13 @@
 		--ring: 240 10% 3.9%;
 
 		--radius: 0.5rem;
+
+		--boxes-background: #ffffff;
+		--boxes-border: #f7f7f7;
 	}
 
 	.dark {
-		--background: 240 10% 3.9%;
+		--background: 0 0% 2%;
 		--foreground: 0 0% 98%;
 
 		--card: 240 10% 3.9%;
@@ -63,6 +72,16 @@
 		--border: 240 3.7% 15.9%;
 		--input: 240 3.7% 15.9%;
 		--ring: 240 4.9% 83.9%;
+
+		--boxes-background: #050505;
+		--boxes-border: #090909;
+	}
+	.boxes-bg {
+		background-color: var(--boxes-background);
+		opacity: 1;
+		background-image: linear-gradient(var(--boxes-border) 1px, transparent 1px),
+			linear-gradient(to right, var(--boxes-border) 1px, var(--boxes-background) 1px);
+		background-size: 50px 50px;
 	}
 }
 
@@ -72,5 +91,6 @@
 	}
 	body {
 		@apply bg-background text-foreground;
+		@apply boxes-bg;
 	}
 }
